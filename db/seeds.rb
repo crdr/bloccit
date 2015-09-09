@@ -8,8 +8,8 @@
 require 'faker'
 
 # Create Posts 
-50.times do 
-        Post.create!(
+1.times do 
+        Post.create(
             title: Faker::Lorem.sentence, 
             body:  Faker::Lorem.paragraph
             )
