@@ -8,6 +8,9 @@
 require 'faker'
 
 # Create Posts 
+if Post.where(title: "title", body: "unique_body").count == 0
+    Post.create!(title: "title", body: "unique_body")
+end
 50.times do 
         Post.create!(
             title: Faker::Lorem.sentence, 
@@ -17,7 +20,12 @@ end
 posts = Post.all
 
 # Create Comments
-100.times do 
+if Comment.where(post:Post.first, body: "unique_body").count == 0
+    Comment.create!(
+        post:Post.first, body: "unique_body"
+        )
+end    
+    100.times do 
     Comment.create!(
         post: posts.sample, 
         body: Faker::Lorem.paragraph

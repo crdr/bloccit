@@ -1,0 +1,4 @@
+<h1>Advertisements#index</h1>
+<% @advertisements.each do |post| %>
+    <p><%= link_to post.title, post_path(post.id) %></p>
+<% end %>
