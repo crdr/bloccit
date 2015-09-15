@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'advertisements/index'
 
   get 'advertisements/show'
@@ -12,15 +13,15 @@ Rails.application.routes.draw do
 
   get 'advertisements/show'
 
-  resources :advertisements 
-  
+  resources :advertisements
+
   resources :posts
 
 
   get 'welcome/contact'
 
   get 'about' => 'welcome#about'
-  
+
   get 'welcome/contact'
   root to: 'welcome#index'
 

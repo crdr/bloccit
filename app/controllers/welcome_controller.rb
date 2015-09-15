@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @posts = Posts.all
+    @posts = Post.all
     puts "VALUE OF @posts VARIABLE IN INDEX CONTROLLER: #{@posts.inspect}"
   end
 
