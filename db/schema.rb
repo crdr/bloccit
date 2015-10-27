@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915174016) do
+ActiveRecord::Schema.define(version: 20151014193840) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "title"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 20150915174016) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "resolved"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email",                  default: "", null: false
@@ -53,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150915174016) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

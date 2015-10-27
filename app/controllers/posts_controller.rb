@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all 
+    authorize @posts
   end
 
   def show
@@ -9,6 +10,7 @@ class PostsController < ApplicationController
 
   def new
    @post = Post.new
+   authorize @post
   end
 
   def create
