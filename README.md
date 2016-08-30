@@ -6,6 +6,8 @@
      `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
     ----------------------------------------------------------------- 
 
+This project belongs to Carmichael.
+
 
 Welcome to your Rails project on Cloud9 IDE!
 
