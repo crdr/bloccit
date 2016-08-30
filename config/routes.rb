@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :posts
+
   devise_for :users
   get 'advertisements/index'
 
@@ -15,16 +17,15 @@ Rails.application.routes.draw do
 
   resources :advertisements
 
-  resources :posts
-
-
   get 'welcome/contact'
 
   get 'about' => 'welcome#about'
 
   get 'welcome/contact'
+  
   root to: 'welcome#index'
 
+resources :questions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
