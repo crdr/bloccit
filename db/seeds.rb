@@ -52,13 +52,10 @@ end
         )
 end
 # Create Report
-    400.times do
-    Report.create!(
-        post: comments.sample,
-        body: Faker::Lorem.paragraph
-        )
+
+50.times do
+    Post.find_or_create_by(title: "Report")
 end
-    
 user = User.first
 user.skip_confirmation!
 user.update_attributes!(
@@ -69,4 +66,3 @@ user.update_attributes!(
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
-puts "#{Report.count} reports created"
