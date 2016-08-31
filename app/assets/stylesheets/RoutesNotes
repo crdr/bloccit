@@ -1,0 +1,8 @@
+# Associated views are views that involve the html.erb file with them. create, destroy, update, show are not associated views
+# as they don't generate html.erb files. 
+
+# New and Create, create objects.
+# Update and edit modify objects.
+
+# POST files are for creating files so they involve create'. POST posts new views of the request.
+# GET they create update and modify files new/show/index/edit. GET acts as a retriver of requests
