@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root "application#hello"
   resources :posts
 
   devise_for :users
