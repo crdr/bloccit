@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "application#hello"
+  
+  resources :tables
+  resources :questions
   resources :posts
 
   devise_for :users

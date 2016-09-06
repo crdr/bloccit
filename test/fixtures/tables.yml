@@ -3,9 +3,7 @@
 one:
   title: MyString
   body: MyText
-  resolved: false
 
 two:
   title: MyString
   body: MyText
-  resolved: false

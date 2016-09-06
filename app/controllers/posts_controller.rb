@@ -31,6 +31,12 @@ class PostsController < ApplicationController
   end
   
   def update
+    # params: The user provided data from edit.html.erb
+     # @post: The row or record that you want to find
+     # update_attributes: The method that takes params and passes to @post so that it can be updated.
+    
+    
+    
     @post = Post.find(params[:id])
     if @post.update_attributes(params.require(:post).permit(:title, :body))
       flash[:notice] = "Post was updated."

@@ -1,0 +1,6 @@
+2016-09-02T21:12:44.587955+00:00 heroku[api]: Enable Logplex by carmikerdreid@gmail.com
+2016-09-02T21:12:44.587955+00:00 heroku[api]: Release v2 created by carmikerdreid@gmail.com
+2016-09-02T21:17:11.561057+00:00 heroku[slug-compiler]: Slug compilation started
+2016-09-02T21:38:19.645988+00:00 heroku[slug-compiler]: Slug compilation started
+2016-09-02T21:53:53.057542+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/" host=guarded-hamlet-93964.herokuapp.com request_id=da06c715-dd9e-410a-9c3b-9e9c6feb147c fwd="66.222.149.59" dyno= connect= service= status=502 bytes=
+2016-09-02T21:53:54.490927+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/favicon.ico" host=guarded-hamlet-93964.herokuapp.com request_id=e30ab15a-8055-4e3d-bd52-b3115153ee98 fwd="66.222.149.59" dyno= connect= service= status=502 bytes=
