@@ -1,0 +1,17 @@
+<h1>Ask Me Questions!</h1>
+<% if policy(Question.new).create? %>
+  <%= link_to "New Question", new_question_path, class: 'btn btn-success' %>
+ <% end %> 
+<% @questions.each do |question| %>
+   <div class="media">
+     <div class="media-body">
+       <h4 class="media-heading">
+         <%= link_to question.title, question %>
+       </h4>
+       <small>
+        submitted <%= time_ago_in_words(question.created_at) %> ago by <%=question.user.name %><br>
+        <%= question.comments.count %> Comments
+       </small>
+     </div>
+   </div>
+ <% end %>

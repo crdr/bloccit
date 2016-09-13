@@ -1,8 +1,21 @@
 Rails.application.routes.draw do
   
+
+
+  get 'topics/index'
+
+  get 'topics/new'
+
+  get 'topics/show'
+
+  get 'topics/edit'
+
   resources :tables
   resources :questions
   resources :posts
+  resources :topics do
+    resources :posts, except: [:index]
+  end
 
   devise_for :users
   get 'advertisements/index'
@@ -26,8 +39,7 @@ Rails.application.routes.draw do
   get 'welcome/contact'
   
   root to: 'welcome#index'
-
-resources :questions
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
