@@ -13,7 +13,6 @@ require 'faker'
         email:     Faker::Internet.email,
         password:  Faker::Lorem.characters(10)
         )
-    user.skip_confirmation!
     user.save!
 end
 users = User.all
@@ -53,14 +52,11 @@ end
 end
 # Create Report
 
-50.times do
-    Post.find_or_create_by(title: "Report")
-end
 user = User.first
-user.skip_confirmation!
 user.update_attributes!(
     email: 'carmikerdreid@gmail.com',
-    password: 'helloworld'
+    password: 'helloworld',
+    password_confirmation: 'helloworld'
     )
 
 puts "Seed finished"
