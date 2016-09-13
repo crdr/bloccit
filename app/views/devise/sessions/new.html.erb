@@ -2,28 +2,12 @@
 
 <div class="row">
   <div class="col-md-8">
-<<<<<<< HEAD
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= devise_error_messages! %>
-      <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>
-  </div>
-    <div class="form-group">
-=======
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
       <div class="form-group">
->>>>>>> 11787569d75c7220e621c16474ff1ddc3c5da5ae
         <%= f.label :email %>
         <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Enter email" %>
       </div>
-<<<<<<< HEAD
-  <div class="form-group"
-    <% if devise_mapping.rememberable? %>
-      <%= f.label :remember_me, class: 'checkbox' do %>
-        <%= f.check_box :remember_me %> Remember me 
-=======
       <div class="form-group">
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
@@ -32,7 +16,6 @@
         <%= f.label :remember_me, class: 'checkbox' do %>
           <%= f.check_box :remember_me %> Remember me 
         <% end %> 
->>>>>>> 11787569d75c7220e621c16474ff1ddc3c5da5ae
       <% end %> 
       <div class="form-group"> 
         <%= f.submit "Sign in", class: 'btn btn success' %> 

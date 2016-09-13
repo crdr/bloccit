@@ -43,8 +43,4 @@ class QuestionsController < ApplicationController
       render :edit
     end
   end
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> 11787569d75c7220e621c16474ff1ddc3c5da5ae

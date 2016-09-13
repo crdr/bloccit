@@ -63,7 +63,6 @@ user.update_attributes!(
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
-<<<<<<< HEAD
 
 # Create an admin user
 admin = User.new(
@@ -101,6 +100,4 @@ member.save!
         description: Faker::Lorem.paragraph
     )
 end    
-topics = Topic.all 
-=======
->>>>>>> 11787569d75c7220e621c16474ff1ddc3c5da5ae
+puts "#{Topic.count}"
