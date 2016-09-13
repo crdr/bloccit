@@ -53,9 +53,6 @@ end
 end
 # Create Report
 
-50.times do
-    Post.find_or_create_by(title: "Report")
-end
 user = User.first
 user.update_attributes!(
     email: 'carmikerdreid@gmail.com',
@@ -66,6 +63,7 @@ user.update_attributes!(
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+<<<<<<< HEAD
 
 # Create an admin user
 admin = User.new(
@@ -104,3 +102,5 @@ member.save!
     )
 end    
 topics = Topic.all 
+=======
+>>>>>>> 11787569d75c7220e621c16474ff1ddc3c5da5ae

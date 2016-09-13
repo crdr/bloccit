@@ -39,7 +39,11 @@ Rails.application.routes.draw do
   get 'welcome/contact'
   
   root to: 'welcome#index'
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 11787569d75c7220e621c16474ff1ddc3c5da5ae
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
