@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   
+  skip_before_action :flash_attack, only: [:new, :create]
+
   def index
     @posts = Post.all
   end
@@ -29,13 +31,15 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
+  protected
   
+  def flash_attack
+      flash[:error] = "You must be logged in to access this section. Holla!"
+  end
   def update
-    # params: The user provided data from edit.html.erb
+    # params: The user perovided data from edit.html.erb
      # @post: The row or record that you want to find
      # update_attributes: The method that takes params and passes to @post so that it can be updated.
-    
-    
     
     @post = Post.find(params[:id])
     if @post.update_attributes(params.require(:post).permit(:title, :body))
