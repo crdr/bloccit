@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
+  
+  def flash_attack
+    flash[:error] = "You must be logged in to access this section. Holla!"
+  end
 end
