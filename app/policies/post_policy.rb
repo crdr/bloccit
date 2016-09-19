@@ -13,9 +13,9 @@ class Scope
         elsif user.moderator?
             scope.all
         elsif user.member?
-            scope.
+            scope.where(user: member)
         elsif user.guest?
-            scope.
+            scope.where()
         else
             scope.where(published: true)
         end

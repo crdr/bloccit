@@ -36,6 +36,7 @@ end
             body:  Faker::Lorem.paragraph
             )
 end
+
 posts = Post.all
 
 # Create Comments
@@ -51,7 +52,19 @@ end
         body: Faker::Lorem.paragraph
         )
 end
-# Create Report
+if Topic.where(title: "title", body: "unique_body").count == 0
+    Topic.create!(title: "title", body: "unique_body")
+end
+50.times do 
+        Topic.create!(
+            user: users.sample,
+            topic: topics.sample,
+            title: Faker::Lorem.sentence, 
+            body:  Faker::Lorem.paragraph
+            )
+end
+
+topics = Topic.all
 
 user = User.first
 user.update_attributes!(
