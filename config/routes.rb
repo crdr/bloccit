@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   
 
 
+  get 'summaries/create'
+
+  get 'summaries/new'
+
   get 'topics/index'
 
   get 'topics/new'
@@ -10,6 +14,11 @@ Rails.application.routes.draw do
 
   get 'topics/edit'
 
+  get `summary/new`
+  
+  get `summary/show`
+  
+  
   resources :tables
   resources :questions
   resources :posts
@@ -26,7 +35,7 @@ Rails.application.routes.draw do
 
   get 'advertisements/edit'
 
-  get 'advertisements/index'
+  get 'advertisements/index' 
 
   get 'advertisements/show'
 

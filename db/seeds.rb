@@ -23,6 +23,18 @@ users = User.all
 #The 'skip_confirmation!' method sets the 'confirmed_at' attribute
 #to avoid triggering a confirmation email when the User is saved.
 
+if Topic.where(title: "title", description: "unique_description").count == 0
+    Topic.create!(title: "title", description: "unique_description")
+end
+50.times do 
+        Topic.create!(
+            title: Faker::Lorem.sentence, 
+            description:  Faker::Lorem.paragraph
+            )
+end
+
+topics = Topic.all
+
 #The 'save' method then saves this User to the database.
 # Create Posts 
 if Post.where(title: "title", body: "unique_body").count == 0
@@ -31,7 +43,7 @@ end
 50.times do 
         Post.create!(
             user: users.sample,
-            topic: topics.sample,
+            topic: users.sample,
             title: Faker::Lorem.sentence, 
             body:  Faker::Lorem.paragraph
             )
@@ -52,19 +64,6 @@ end
         body: Faker::Lorem.paragraph
         )
 end
-if Topic.where(title: "title", body: "unique_body").count == 0
-    Topic.create!(title: "title", body: "unique_body")
-end
-50.times do 
-        Topic.create!(
-            user: users.sample,
-            topic: topics.sample,
-            title: Faker::Lorem.sentence, 
-            body:  Faker::Lorem.paragraph
-            )
-end
-
-topics = Topic.all
 
 user = User.first
 user.update_attributes!(
@@ -84,7 +83,6 @@ admin = User.new(
     password: 'helloworld',
     role:     'admin'
 )
-admin.skip_confirmation!
 admin.save!
 
 # Create a moderator
@@ -94,7 +92,6 @@ moderator = User.new(
     password: 'helloworld',
     role:     'moderator'
 )
-moderator.skip_confirmation!
 moderator.save!
 
 # Create a member
@@ -103,14 +100,5 @@ member = User.new(
    email:   'member@example.com',
    password: 'helloworld'
 )
-member.skip_confirmation!
 member.save!
 
-# Create Topics
-15.times do
-    Topic.create!(
-        name:        Faker::Lorem.sentence,
-        description: Faker::Lorem.paragraph
-    )
-end    
-puts "#{Topic.count}"
