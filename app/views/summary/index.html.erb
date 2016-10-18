@@ -1,0 +1,17 @@
+<h1>Summary</h1>
+<% if policy(Summary.new).create? %>
+  <%= link_to "Summary", new_summary_path, class: 'btn btn-success' %>
+ <% end %> 
+<% @summary.each do |summary| %>
+   <div class="media">
+     <div class="media-body">
+       <h4 class="media-heading">
+         <%= link_to summary.title, summary %>
+       </h4>
+       <small>
+        submitted <%= time_ago_in_words(summary.created_at) %> ago by <%=summary.user.name %><br>
+        <%= question.comments.count %> Comments
+       </small>
+     </div>
+   </div>
+ <% end %>  

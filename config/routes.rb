@@ -2,10 +2,6 @@ Rails.application.routes.draw do
   
 
 
-  get 'summaries/create'
-
-  get 'summaries/new'
-
   get 'topics/index'
 
   get 'topics/new'
@@ -13,20 +9,15 @@ Rails.application.routes.draw do
   get 'topics/show'
 
   get 'topics/edit'
-
-  get `summary/new`
   
-  get `summary/show`
-  
-  
-  resources :tables
-  resources :questions
-  resources :posts
-  resources :topics do
-    resources :posts, except: [:index]
+    devise_for :users
+    resources :topics do
+    resources :posts, except: [:index] do
+      resources :summary
+    end
   end
 
-  devise_for :users
+  
   get 'advertisements/index'
 
   get 'advertisements/show'
