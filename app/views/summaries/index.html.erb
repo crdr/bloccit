@@ -1,0 +1,6 @@
+<h1>Summary</h1>
+
+
+<% if policy(Summary.new).create? %>
+  <%= link_to "New Summary", new_topic_post_summary_path, class: 'btn btn-success' %>
+<% end %> 

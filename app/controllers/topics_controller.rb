@@ -22,12 +22,18 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(params.require(:topic).permit(:title, :description, :public))
+    puts @topic
     authorize @topic
+    puts @topic
     if @topic.save
+      puts @topic
       redirect_to @topic, notice: "Topic was saved successfully."
+      puts @topic
     else
       flash[:error] = "There was an error saving the topic. Please try again."
+      puts @topic
       render :new
+      puts @topic
     end
   end
   

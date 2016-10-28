@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20161013003840) do
 
   create_table "summaries", force: :cascade do |t|
     t.string   "title"
+    t.text     "body"
     t.boolean  "public",      default: true
     t.text     "description"
     t.datetime "created_at",                 null: false

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
   get 'topics/index'
-
+  
   get 'topics/new'
 
   get 'topics/show'
@@ -13,9 +13,9 @@ Rails.application.routes.draw do
     devise_for :users
     resources :topics do
     resources :posts, except: [:index] do
-      resources :summary
+      resources :summaries 
     end
-  end
+  end  
 
   
   get 'advertisements/index'
