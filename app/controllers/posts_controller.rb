@@ -29,6 +29,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @topic = @post.topic
   end
   protected
   

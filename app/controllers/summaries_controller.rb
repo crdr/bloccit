@@ -5,7 +5,7 @@ class SummariesController < ApplicationController
     @summary.post_id = params[:post_id]
     if @summary.save
         flash[:notice] = "Summary was saved." 
-        redirect_to topic_post_path(@summary.post.topic_id, @post.id)
+        redirect_to topic_post_summary_path(@summary.post.topic_id, @post.id, @summary.id)
     else 
         flash[:error] = "There was an error saving the summary. Please try again."
     end

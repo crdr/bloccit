@@ -83,7 +83,7 @@ Rails.application.routes.draw do
 
   # Example resource route with concerns:
   #   concern :toggleable do
-  #     post 'toggle'
+  #     post 'toggle' 
   #   end
   #   resources :posts, concerns: :toggleable
   #   resources :photos, concerns: :toggleable
