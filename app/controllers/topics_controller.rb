@@ -16,24 +16,21 @@ class TopicsController < ApplicationController
   end
 
   def edit
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.find(params[:id])
     authorize @topic
   end
 
   def create
     @topic = Topic.new(params.require(:topic).permit(:title, :description, :public))
-    puts @topic
+    @topic.user = current_user
+    
     authorize @topic
-    puts @topic
     if @topic.save
-      puts @topic
+      flash[:notice] = "Post was saved!"
       redirect_to @topic, notice: "Topic was saved successfully."
-      puts @topic
     else
       flash[:error] = "There was an error saving the topic. Please try again."
-      puts @topic
-      render :new
-      puts @topic
+        render :new
     end
   end
   

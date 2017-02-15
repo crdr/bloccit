@@ -3,8 +3,8 @@ class Topic < ActiveRecord::Base
   belongs_to :user
 
 
-validates :title, length: { minimum: 5 }, presence: true
-  validates :topic, presence: true
+  validates :title, length: { minimum: 5 }, presence: true
+  
   validates :user, presence: true
 
 end
